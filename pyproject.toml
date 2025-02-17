@@ -1,6 +1,6 @@
 [project]
 name = "landaulang"
-version = "0.1.0"
+version = "0.1.1"
 description = "Small 'home' programming language (name is given in honor of soviet scientist Lev D. Landau)"
 authors = [
     {name = "alexeev-prog",email = "alexeev.dev@mail.ru"}

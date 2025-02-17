@@ -34,7 +34,7 @@ def transpy(n):
 
 def stat(n):
 	if isinstance(n, Print):
-		return "print(%s, end=%s)" % (expr(n.expr), ["''", "'\\n'"][n.newline])
+		return "print(%s, end=%s)\n" % (expr(n.expr), ["''", "'\\n'"][n.newline])
 	elif isinstance(n, Return):
 		return "return %s\n" % (expr(n.expr) if n.expr is not None else "")
 	elif isinstance(n, Assign):
