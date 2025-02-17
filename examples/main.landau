@@ -1,0 +1,32 @@
+function main() {
+	function sqrt(n: Integer, shift: Integer) : Integer {
+		set x: Integer;
+		set x_old: Integer;
+		set n_one: Integer;
+
+		if n > 65535 {
+			out 2 * sqrt(n / 4, shift);
+		}
+
+		x = shift;
+		n_one = n * shift;
+
+		while True {
+			x_old = x;
+			x = (a + n_one / x) / 2;
+			if abs(x - x_old) <= 1 {
+			out x;
+			}
+		}
+	}
+
+	function abs(x: Integer) : Integer {
+		if x < 0 {
+			out -x;
+		} else {
+			out x;
+		}
+	}
+
+	printline sqrt(25735, 8192);
+}
