@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
-from typing import Any, Dict, Optional, List, Tuple
+from typing import Any, Dict, List, Optional, Tuple
+
 from landaulang.enums import DataType
 
 
@@ -10,37 +11,41 @@ class Expression(ABC):
 
 
 class ArithOper(Expression):
-	def __init__(self, oper: Any, left: Any, right: Any, deco: Optional[Dict[Any, Any]] = None):
+	def __init__(
+		self, oper: Any, left: Any, right: Any, deco: Optional[Dict[Any, Any]] = None
+	):
 		self.oper = oper
 		self.left = left
 		self.right = right
-		self.deco = (deco or {}) | {'type': DataType.INTEGER}
+		self.deco = (deco or {}) | {"type": DataType.INTEGER}
 
 
 class LogicOper(Expression):
-	def __init__(self, oper: Any, left: Any, right: Any, deco: Optional[Dict[Any, Any]] = None):
+	def __init__(
+		self, oper: Any, left: Any, right: Any, deco: Optional[Dict[Any, Any]] = None
+	):
 		self.oper = oper
 		self.left = left
 		self.right = right
-		self.deco = (deco or {}) | {'type': DataType.BOOLEAN}
+		self.deco = (deco or {}) | {"type": DataType.BOOLEAN}
 
 
 class Integer(Expression):
 	def __init__(self, value: int, deco: Optional[Dict[Any, Any]] = None):
 		self.value = value
-		self.deco = (deco or {}) | {'type': DataType.INTEGER}
+		self.deco = (deco or {}) | {"type": DataType.INTEGER}
 
 
 class Boolean(Expression):
 	def __init__(self, value: bool, deco: Optional[Dict[Any, Any]] = None):
 		self.value = value
-		self.deco = (deco or {}) | {'type': DataType.BOOLEAN}
+		self.deco = (deco or {}) | {"type": DataType.BOOLEAN}
 
 
 class String(Expression):
 	def __init__(self, value: str, deco: Optional[Dict[Any, Any]] = None):
 		self.value = value
-		self.deco = (deco or {}) | {'type': DataType.STRING}
+		self.deco = (deco or {}) | {"type": DataType.STRING}
 
 
 class Variable(Expression):
@@ -56,7 +61,9 @@ class FunctionCall(Expression):
 	Can be a statement OR a expression
 	"""
 
-	def __init__(self, name: str, args: List[Tuple[Any]], deco: Optional[Dict[Any, Any]] = None):
+	def __init__(
+		self, name: str, args: List[Tuple[Any]], deco: Optional[Dict[Any, Any]] = None
+	):
 		self.name = name
 		self.args = args
 		self.deco = deco or {}

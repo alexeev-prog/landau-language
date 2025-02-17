@@ -1,6 +1,6 @@
 function main() {
-	function sqrt(n: Integer, shift: Integer) : Integer {
-		set x: Integer;
+	function sqrt(n:Integer, shift:Integer) {
+		set x:Integer;
 		set x_old: Integer;
 		set n_one: Integer;
 
@@ -13,9 +13,9 @@ function main() {
 
 		while True {
 			x_old = x;
-			x = (a + n_one / x) / 2;
+			x = (x + n_one / x) / 2;
 			if abs(x - x_old) <= 1 {
-			out x;
+				out x;
 			}
 		}
 	}
@@ -28,5 +28,5 @@ function main() {
 		}
 	}
 
-	printline sqrt(25735, 8192);
+	println sqrt(25735, 8192);
 }

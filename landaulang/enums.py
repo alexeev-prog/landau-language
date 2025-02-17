@@ -1,6 +1,3 @@
-from enum import Enum
-
-
 class DataType:
 	VOID = 0
 	INTEGER = 1

@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Optional, Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 
 class Node(ABC):
@@ -29,14 +29,22 @@ class Assign(Node):
 
 
 class While(Node):
-	def __init__(self, expr: str, body: List[Node], deco: Optional[Dict[Any, Any]] = None):
+	def __init__(
+		self, expr: str, body: List[Node], deco: Optional[Dict[Any, Any]] = None
+	):
 		self.expr = expr
 		self.body = body
 		self.deco = deco or {}
 
 
 class IfThenElse(Node):
-	def __init__(self, expr: str, ibody: List[Node], ebody: List[Node], deco: Optional[Dict[Any, Any]] = None):
+	def __init__(
+		self,
+		expr: str,
+		ibody: List[Node],
+		ebody: List[Node],
+		deco: Optional[Dict[Any, Any]] = None,
+	):
 		self.expr = expr
 		self.ibody = ibody
 		self.ebody = ebody

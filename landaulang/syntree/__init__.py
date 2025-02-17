@@ -1,5 +1,27 @@
-from landaulang.syntree.expressions import LogicOper, ArithOper, Integer, Boolean, String, Variable, FunctionCall
-from landaulang.syntree.statements import Return, Print, Assign, While, IfThenElse
+from landaulang.syntree.expressions import (
+	ArithOper,
+	Boolean,
+	FunctionCall,
+	Integer,
+	LogicOper,
+	String,
+	Variable,
+)
+from landaulang.syntree.function import Function
+from landaulang.syntree.statements import Assign, IfThenElse, Print, Return, While
 
-
-__all__ = [LogicOper, ArithOper, Integer, Boolean, String, Variable, FunctionCall, Return, Print, Assign, While, IfThenElse]
+__all__ = [
+	LogicOper,
+	Function,
+	ArithOper,
+	Integer,
+	Boolean,
+	String,
+	Variable,
+	FunctionCall,
+	Return,
+	Print,
+	Assign,
+	While,
+	IfThenElse,
+]
